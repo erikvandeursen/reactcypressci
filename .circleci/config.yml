@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@12.18
+  node: circleci/node@4.1.0
   cypress: cypress-io/cypress@1
   newman: postman/newman@0.0.2
 workflows:
