@@ -18,4 +18,5 @@ workflows:
             - newman/newman-run:
                 - collection: collections/DevOps01.postman_collection.json
       - cypress:
-          - cypress/run
+          - checkout
+          - run: cypress/run
