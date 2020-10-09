@@ -1,0 +1,15 @@
+{
+  "name": "postmanlocal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "newman:coll": "npx newman run collections/DevOps01.postman_collection.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^5.2.0"
+  }
+}
