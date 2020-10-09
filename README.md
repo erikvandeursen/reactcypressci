@@ -23,6 +23,10 @@ RUN: /devops01 npx react-scripts start
   - Check: https://circleci.com/docs/2.0/getting-started/
   - Check: https://www.youtube.com/watch?v=fIeZQ0dLfA0
 - Jest
+  - To do: Add Jest
 - RTL
-+ ESLint
+ - To do: Add RTL
+- ESLint
+- Visual diffing
+  - To do: Add library
 - Dashboard
