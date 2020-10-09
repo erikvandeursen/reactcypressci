@@ -1,0 +1,14 @@
+{
+  "url": {
+    "home": "/"
+  },
+  "selector": {
+    "title": "h1",
+    "input": "input",
+    "button": "button",
+    "item": ".todo",
+    "cross": ".cross",
+    "check": ".check",
+    "done": ".done"
+  }
+}

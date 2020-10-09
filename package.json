@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "feather-icons": "^4.5.0",
+    "fs-extra": "^9.0.1",
     "postman": "^0.2.0",
     "react": "^16.2.0",
     "react-cookie": "^2.1.2",
@@ -29,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0"
   }
 }
