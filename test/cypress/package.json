@@ -16,8 +16,6 @@
     "axe-core": "^4.0.2",
     "babel-loader": "^8.1.0",
     "cypress": "^5.2.0",
-    "cypress-eslint-preprocessor": "^1.2.2",
-    "eslint": "^5.16.0",
     "install": "^0.13.0",
     "npm": "^6.14.8"
   }
