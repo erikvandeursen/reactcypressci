@@ -4,4 +4,9 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run
+      - cypress/install:
+          build: 'npx react-scripts start'
+      - cypress/run:
+          requires:
+            - cypress/install
+          wait-on: "http://localhost:3000"
