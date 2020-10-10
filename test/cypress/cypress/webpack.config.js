@@ -12,6 +12,7 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env']
+              formatter: require("eslint/lib/formatters/stylish")
             }
           }
         ]
