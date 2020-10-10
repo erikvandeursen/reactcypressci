@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - cypress/install:
-        build: 'npx react-scripts run'
+          build: 'npx react-scripts run'
       - cypress/run:
         requires:
           - cypress/install
