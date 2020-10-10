@@ -7,6 +7,6 @@ workflows:
       - cypress/install:
           build: 'npx react-scripts run'
       - cypress/run:
-        requires:
-          - cypress/install
-        wait-on: "http://localhost:3000"
+          requires:
+            - cypress/install
+          wait-on: "http://localhost:3000"
