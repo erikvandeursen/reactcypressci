@@ -15,7 +15,6 @@ Simple ReactJs task manager 🔥
 RUN: /devops01 npx react-scripts start
 
 - Cypress test suite
-  - To do: Fix broken test case
   - To do: Include in CircleCI config
 - Postman / Newman
   - To do: Include in CircleCI config
