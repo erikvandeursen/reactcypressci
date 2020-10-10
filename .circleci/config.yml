@@ -1,27 +1,7 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.1.0
   cypress: cypress-io/cypress@1
-  newman: postman/newman@0.0.2
-
 workflows:
-  build_and_test:
+  build:
     - jobs:
-      - build:
-        - steps:
-          - checkout
-          - run: react-scripts start
-      - newman:
-        - requires:
-          - build
-        - steps:
-          - checkout
-          - run: echo "Start Newman tests"
-          - newman/newman-run:
-              - collection: collections/DevOps01.postman_collection.json
-      - cypress:
-        - requires:
-          - newman
-        - steps:
-          - checkout
-          - run: cypress/run
+      - cypress/run
