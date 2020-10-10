@@ -3,22 +3,30 @@ orbs:
   node: circleci/node@4.1.0
   cypress: cypress-io/cypress@1
   newman: postman/newman@0.0.2
+
+jobs:
+  - build:
+      steps:
+        - checkout
+        - run: react-scripts start
+  - newman:
+      executor: newman/postman-newman-docker
+      steps:
+        - checkout
+        - run: echo "Start Newman tests"
+        - newman/newman-run:
+            - collection: collections/DevOps01.postman_collection.json
+  - cypress:
+      steps:
+        - checkout
+        - run: cypress/run
+
 workflows:
+  version: 2
   build_and_test:
-    jobs:
-      - build:
-          steps:
-            - checkout
-            - run: react-scripts build
-      - newman:
-          executor: newman/postman-newman-docker
-          steps:
-            - checkout
-            - run: echo "Start Newman tests"
-            - newman/newman-run:
-                - collection: collections/DevOps01.postman_collection.json
-      - cypress:
-          steps:
-            - checkout
-            - run: cypress/run
- 
+    - build
+    - newman:
+      - requires:
+        - build
+    - cypress
+      - requires
