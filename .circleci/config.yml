@@ -1,24 +1,25 @@
 version: 2
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1.23.0
 jobs:
   build:
     docker:
       - image: circleci/node:8
     steps:
       - checkout
-      - run: npx react-scripts build
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: npx react-scripts start
       - persist_to_workspace:
           root: .
           paths:
             - build/*
-  
-  deploy:
-    steps:
-      - checkout- 
-      - attach_workspace:
-          at: build
-  
-  test:
-    steps:
-      - checkout
+      - save_cache:
+          paths:
+            - node_modules
+            - ~/.npm
+            - ~/.cache
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npx cypress run
