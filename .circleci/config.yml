@@ -28,9 +28,9 @@ jobs:
       - run: npx cypress run
 
 workflows:
-version: 2
-  jobs:
-    - build
-    - test:
-      requires: 
+  version: 2
+    jobs:
       - build
+      - test:
+        requires: 
+        - build
