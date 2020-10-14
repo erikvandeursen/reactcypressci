@@ -20,14 +20,3 @@ jobs:
   test:
     steps:
       - checkout
-
-workflows:
-  version: 2
-    jobs:
-      - build
-      - deploy:
-          requires: 
-            - build
-      - test:
-          requires:
-            - deploy
