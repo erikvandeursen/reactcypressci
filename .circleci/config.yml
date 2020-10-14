@@ -1,12 +1,33 @@
-version: 2.1
+version: 2
 orbs:
   cypress: cypress-io/cypress@1
-workflows:
+jobs:
   build:
+    steps:
+      - checkout
+      - run: npx react-scripts build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build/*
+  
+  deploy:
+    steps:
+      - checkout- 
+      - attach_workspace:
+          at: build
+  
+  test:
+    steps:
+      - checkout
+
+workflows:
+  version: 2
     jobs:
-      - cypress/install:
-          build: 'npx react-scripts start'
-      - cypress/run:
+      - build
+      - deploy:
+          requires: 
+            - build
+      - test:
           requires:
-            - cypress/install
-          wait-on: "http://localhost:3000"
+            - deploy
