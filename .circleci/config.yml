@@ -12,10 +12,6 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: npx react-scripts start
-      - persist_to_workspace:
-          root: .
-          paths:
-            - build/*
       - save_cache:
           paths:
             - node_modules
