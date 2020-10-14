@@ -20,6 +20,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
           
   test:
+    docker:
+      - image: circleci/node:8
     working_directory: ~/test/cypress
     steps:
       - checkout
