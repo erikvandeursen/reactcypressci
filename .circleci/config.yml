@@ -18,4 +18,9 @@ jobs:
             - ~/.npm
             - ~/.cache
           key: v1-dependencies-{{ checksum "package.json" }}
+          
+  test:
+    working_directory: ~/test/cypress
+    steps:
+      - checkout
       - run: npx cypress run
